@@ -49,6 +49,7 @@ body {
   padding-top: var(--header-height);
   padding-bottom: var(--footer-height);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img {
@@ -852,7 +853,8 @@ code {
   }
 
   .hero-title {
-    font-size: 16vw;
+      font-size: 13vw;
+      overflow-wrap: break-word;
   }
 
   .footer-path {
