@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanashs Papakwstas — Digital Artist & Graphic Designer</title>
+  <meta name="description" content="Portfolio of Thanashs Papakwstas (filtatos), a digital artist and graphic designer based in Greece. Posters, cover art, photo retouching, and video.">
+  <meta name="author" content="Thanashs Papakwstas">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="grid-background" aria-hidden="true"></div>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <header class="site-header">
+    <a class="site-logo" href="#home" data-link>
+      <span class="site-logo-mark">+</span>
+      <span class="site-logo-text" id="logo-text">filtatos</span>
+    </a>
+
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav">
+      <a href="#home" data-link>Home</a>
+      <a href="#work" data-link>Work</a>
+      <a href="#about" data-link>About</a>
+      <a href="#contact" data-link>Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== HOME ===== -->
+    <section class="page" id="page-home" hidden>
+      <div class="hero">
+        <div class="hero-graphic">
+          <p class="hero-kicker" id="home-kicker"></p>
+          <h1 class="hero-title">
+            <span>Thanashs</span>
+            <span>Papakwstas</span>
+          </h1>
+          <p class="hero-role" id="home-role"></p>
+          <p class="hero-tagline" id="home-tagline"></p>
+          <a class="hero-cta" href="#work" data-link>View work</a>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="info-module">
+            <div class="info-module-header">
+              <span>Node: USER</span>
+              <span>01.0</span>
+            </div>
+            <div class="info-row">
+              <span>Status</span>
+              <span class="info-value" id="home-status"></span>
+            </div>
+            <div class="info-row">
+              <span>Location</span>
+              <span class="info-value" id="home-location"></span>
+            </div>
+            <div class="info-row">
+              <span>Role</span>
+              <span class="info-value">Visual_Artist</span>
+            </div>
+            <div class="info-row">
+              <span>Handle</span>
+              <span class="info-value" id="home-handle"></span>
+            </div>
+            <div class="load-bar" aria-hidden="true">
+              <div class="load-bar-fill"></div>
+            </div>
+          </div>
+
+          <figure class="hero-figure">
+            <img id="home-featured-image" src="assets/chrome_teeth.png" alt="Selected work: chrome_teeth">
+            <figcaption>Selected file: chrome_teeth.png</figcaption>
+          </figure>
+        </aside>
+      </div>
+
+      <div class="marquee-strip" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Photoshop /// Illustrator /// Corel Draw /// DaVinci Resolve /// Color Correction /// Poster Design /// Digital Art /// Photo Retouching /// Video Editing /// VFX /// </span>
+          <span>Photoshop /// Illustrator /// Corel Draw /// DaVinci Resolve /// Color Correction /// Poster Design /// Digital Art /// Photo Retouching /// Video Editing /// VFX /// </span>
+        </div>
+      </div>
+
+      <div class="home-preview">
+        <div class="section-label">
+          <span>Selected works</span>
+          <a href="#work" data-link>All projects →</a>
+        </div>
+        <div class="project-grid" id="home-preview-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS / WORK ===== -->
+    <section class="page" id="page-work" hidden>
+      <header class="page-header">
+        <p class="section-kicker">Archive</p>
+        <h1 class="page-title">Work</h1>
+        <p class="page-intro">Selected posters, covers, and digital pieces. Click a work to open it.</p>
+      </header>
+      <div class="project-grid" id="work-grid"></div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="page" id="page-about" hidden>
+      <header class="page-header">
+        <p class="section-kicker">File</p>
+        <h1 class="page-title">About</h1>
+      </header>
+
+      <div class="about-layout">
+        <div class="about-banner">
+          <h2>Designer<br>Artist</h2>
+        </div>
+
+        <article class="os-window">
+          <div class="os-window-header">
+            <span>ABOUT_ME.TXT</span>
+            <span>[_] [X]</span>
+          </div>
+          <div class="os-window-body">
+            <p id="about-text"></p>
+          </div>
+        </article>
+      </div>
+
+      <div class="skills-block">
+        <h3 class="skills-title">Skills / Tools</h3>
+        <ul class="skills-list" id="skills-list"></ul>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="page" id="page-contact" hidden>
+      <header class="page-header">
+        <p class="section-kicker">Signal</p>
+        <h1 class="page-title">Let’s build.</h1>
+      </header>
+
+      <div class="contact-layout">
+        <div class="contact-direct">
+          <div class="status-circle" aria-hidden="true">
+            <svg viewBox="0 0 100 100">
+              <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"></path>
+              <text>
+                <textPath href="#circlePath">OPEN FOR COMMISSIONS /// FILTATOS /// 2026 /// </textPath>
+              </text>
+            </svg>
+          </div>
+
+          <p class="contact-note">For commissions and collaborations, write directly or use the form.</p>
+          <a class="contact-link" id="contact-email" href="mailto:thanashspapakwstas@gmail.com"></a>
+          <a class="contact-link" id="contact-instagram" href="https://www.instagram.com/filtatos/" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+          <label>
+            Name
+            <input type="text" name="name" id="form-name" required autocomplete="name">
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" id="form-email" required autocomplete="email">
+          </label>
+          <label>
+            Message
+            <textarea name="message" id="form-message" rows="6" required></textarea>
+          </label>
+          <button class="form-submit" type="submit">Send message</button>
+          <p class="form-status" id="form-status" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <span class="footer-start">START</span>
+    <span class="footer-path">C:\PORTFOLIO\<span id="footer-page">HOME</span></span>
+    <span class="footer-handle" id="footer-handle"></span>
+    <span class="footer-clock" id="clock">00:00:00</span>
+  </footer>
+
+  <!-- ===== PROJECT VIEWER ===== -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close">Close</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">←</button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-image" alt="">
+      <figcaption>
+        <strong id="lightbox-title"></strong>
+        <span id="lightbox-meta"></span>
+      </figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next image">→</button>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
