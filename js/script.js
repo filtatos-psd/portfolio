@@ -2,7 +2,7 @@
 
 function getPageFromHash() {
   const hash = window.location.hash.replace("#", "");
-  if (hash === "work" || hash === "about" || hash === "contact" || hash === "start") {
+  if (hash === "work" || hash === "about" || hash === "contact") {
     return hash;
   }
   return "home";
