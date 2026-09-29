@@ -66,11 +66,10 @@
   font-size: 3.6cqw;
   letter-spacing: 0.02em;
   color: var(--color-countdown);
-  text-shadow: 0 0 0.5em rgba(255, 26, 26, 0.85);
+  text-shadow: 0 0 0.5em rgba(255, 26, 26, 0.30);
   pointer-events: none;
   user-select: none;
   animation: start-flicker 4s steps(1) infinite;
-  animation: start-flicker 16s steps(3) infinite;
 }
 
 @keyframes start-flicker {
