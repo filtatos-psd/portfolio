@@ -59,7 +59,7 @@
   position: absolute;
   top: 42%;
   right: 30%;
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
   white-space: nowrap;
   font-family: var(--font-mono);
   font-weight: 700;
