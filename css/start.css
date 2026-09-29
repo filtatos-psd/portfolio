@@ -57,13 +57,13 @@
 /* ----- Mysterious red countdown, sitting on the grass ----- */
 .start-countdown {
   position: absolute;
-  left: 60%;
-  top: 68%;
-  transform: translate(-50%, -50%);
+  top: 56%;
+  right: 5%;
+  transform: translateY(-50%);
   white-space: nowrap;
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 6.2cqw;
+  font-size: 3.6cqw;
   letter-spacing: 0.02em;
   color: var(--color-countdown);
   text-shadow: 0 0 0.5em rgba(255, 26, 26, 0.85);
