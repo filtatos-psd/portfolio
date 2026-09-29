@@ -1,1 +1,85 @@
+/* ===== START PAGE (hidden section) =====
+   Styles for the START button in the footer and for the #start page:
+   the Paintbrush picture with a mysterious red countdown on the grass.
+   Colors and fonts come from the variables already defined in style.css.
+*/
 
+:root {
+  --color-countdown: #ff1a1a;
+}
+
+/* ----- START button in the footer ----- */
+.footer-start {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.footer-start:hover,
+.footer-start:focus-visible,
+.footer-start.is-active {
+  background: var(--color-pink);
+}
+
+.footer-start:focus-visible {
+  outline: 2px solid var(--color-yellow);
+  outline-offset: 2px;
+}
+
+/* ----- Window, same size class as the About window ----- */
+.start-window {
+  width: min(760px, calc(100% - 2 * var(--page-pad)));
+  margin: var(--space-lg) auto;
+}
+
+.start-body {
+  padding: 0;
+  line-height: 1;
+}
+
+/* ----- Stage: keeps the picture's own proportions, holds picture + countdown ----- */
+.start-stage {
+  position: relative;
+  aspect-ratio: 485 / 365;
+  background: #000;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.start-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ----- Mysterious red countdown, sitting on the grass ----- */
+.start-countdown {
+  position: absolute;
+  left: 60%;
+  top: 68%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 6.2cqw;
+  letter-spacing: 0.02em;
+  color: var(--color-countdown);
+  text-shadow: 0 0 0.5em rgba(255, 26, 26, 0.85);
+  pointer-events: none;
+  user-select: none;
+  animation: start-flicker 4s steps(1) infinite;
+}
+
+@keyframes start-flicker {
+  0%, 90%, 94%, 100% { opacity: 1; }
+  92%                { opacity: 0.3; }
+  97%                { opacity: 0.65; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .start-countdown {
+    animation: none;
+  }
+}
