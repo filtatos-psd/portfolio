@@ -57,9 +57,9 @@
 /* ----- Mysterious red countdown, sitting on the grass ----- */
 .start-countdown {
   position: absolute;
-  top: 38%;
-  right: 2%;
-  transform: translate(-50%, -50%);
+  top: 56%;
+  right: 5%;
+  transform: translateY(-50%);
   white-space: nowrap;
   font-family: var(--font-mono);
   font-weight: 700;
