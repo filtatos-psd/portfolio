@@ -19,7 +19,7 @@
 .footer-start:hover,
 .footer-start:focus-visible,
 .footer-start.is-active {
-  background: var(--color-pink);
+  background: var(--color-yellow);
 }
 
 .footer-start:focus-visible {
