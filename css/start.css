@@ -58,7 +58,7 @@
 .start-countdown {
   position: absolute;
   top: 42%;
-  right: 3%;
+  right: 10%;
   transform: translateY(-50%);
   white-space: nowrap;
   font-family: var(--font-mono);
