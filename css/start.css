@@ -70,6 +70,7 @@
   pointer-events: none;
   user-select: none;
   animation: start-flicker 4s steps(1) infinite;
+  animation: start-flicker 16s steps(3) infinite;
 }
 
 @keyframes start-flicker {
