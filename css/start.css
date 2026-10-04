@@ -110,8 +110,8 @@
 /* Back face: random site-color block with a "?" mark */
 .memory-card-back {
   font-family: var(--font-mono);
-  font-weight: 1100;
-  font-size: 1.2rem;
+  font-weight: 1000;
+  font-size: 1.6rem;
   color: var(--color-bg);
 }
 
