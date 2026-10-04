@@ -4,28 +4,30 @@
    Colors and fonts come from the variables already defined in style.css.
 */
 
-/* ----- START / BACK button in the footer ----- */
+/* ----- START / BACK button in the footer: solid yellow ----- */
 .footer-start {
-  position: relative;
-  cursor: pointer;
+  background: var(--color-yellow);
+  color: var(--color-bg);
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
   text-decoration: none;
-  transition: background 0.15s ease;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
 }
 
 .footer-start:hover,
-.footer-start:focus-visible,
-.footer-start.is-active {
-  background: var(--color-yellow);
+.footer-start:focus-visible {
+  opacity: 0.75;
 }
 
 .footer-start:focus-visible {
-  outline: 2px solid var(--color-yellow);
+  outline: 2px solid var(--color-text);
   outline-offset: 2px;
 }
 
-/* ----- Window, same size class as the About window ----- */
+/* ----- Window: bigger than the About window ----- */
 .start-window {
-  width: min(760px, calc(100% - 2 * var(--page-pad)));
+  width: min(960px, calc(100% - 2 * var(--page-pad)));
   margin: var(--space-lg) auto;
 }
 
@@ -63,10 +65,9 @@
   display: none;
 }
 
-/* ----- Board: responsive grid of square cards ----- */
+/* ----- Board: column count is set dynamically by start.js ----- */
 .memory-board {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
   gap: var(--space-xs);
 }
 
