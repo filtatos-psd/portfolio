@@ -1,14 +1,10 @@
-/* ===== START PAGE (hidden section) =====
-   Styles for the START button in the footer and for the #start page:
-   the Paintbrush picture with a mysterious red countdown on the grass.
+/* ===== START PAGE: MEMORY GAME =====
+   Styles for the START/BACK button in the footer and for the #start page:
+   a memory-matching game where every pair is one of your projects.
    Colors and fonts come from the variables already defined in style.css.
 */
 
-:root {
-  --color-countdown: #ff1a1a;
-}
-
-/* ----- START button in the footer ----- */
+/* ----- START / BACK button in the footer ----- */
 .footer-start {
   position: relative;
   cursor: pointer;
@@ -19,7 +15,7 @@
 .footer-start:hover,
 .footer-start:focus-visible,
 .footer-start.is-active {
-  background: var(--color-yellow);
+  background: var(--color-pink);
 }
 
 .footer-start:focus-visible {
@@ -34,52 +30,114 @@
 }
 
 .start-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ----- Status row: move counter + win message ----- */
+.memory-status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.memory-moves {
+  color: var(--color-muted);
+}
+
+.memory-win-status {
+  color: var(--color-bg);
+  background: var(--color-yellow);
+  padding: 0.2rem 0.6rem;
+  font-weight: 700;
+}
+
+.memory-win-status[hidden] {
+  display: none;
+}
+
+/* ----- Board: responsive grid of square cards ----- */
+.memory-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  gap: var(--space-xs);
+}
+
+/* ----- Each card: a square button with a 3D flip ----- */
+.memory-card {
+  aspect-ratio: 1 / 1;
+  background: none;
+  border: 0;
   padding: 0;
-  line-height: 1;
+  cursor: pointer;
+  perspective: 600px;
 }
 
-/* ----- Stage: keeps the picture's own proportions, holds picture + countdown ----- */
-.start-stage {
+.memory-card-inner {
   position: relative;
-  aspect-ratio: 485 / 365;
-  background: #000;
-  overflow: hidden;
-  container-type: inline-size;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease;
+  transform-style: preserve-3d;
 }
 
-.start-image {
+.memory-card.is-flipped .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  border: var(--border-width) solid var(--color-border);
+  overflow: hidden;
+}
+
+/* Back face: random site-color block with a "?" mark */
+.memory-card-back {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--color-bg);
+}
+
+.memory-card-back.card-pink   { background: var(--color-pink); }
+.memory-card-back.card-yellow { background: var(--color-yellow); }
+.memory-card-back.card-blue   { background: var(--color-blue); color: var(--color-text); }
+
+/* Front face: the project image, center-cropped to a perfect square */
+.memory-card-front {
+  background: var(--color-panel);
+  transform: rotateY(180deg);
+}
+
+.memory-card-front img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
-/* ----- Mysterious red countdown, sitting on the grass ----- */
-.start-countdown {
-  position: absolute;
-  top: 56%;
-  right: 10%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 3.6cqw;
-  letter-spacing: 0.02em;
-  color: var(--color-countdown);
-  text-shadow: 0 0 0.5em rgba(255, 26, 26, 0.30);
-  pointer-events: none;
-  user-select: none;
-  animation: start-flicker 4s steps(1) infinite;
-}
-
-@keyframes start-flicker {
-  0%, 90%, 94%, 100% { opacity: 1; }
-  92%                { opacity: 0.3; }
-  97%                { opacity: 0.65; }
+/* Matched pairs: dim slightly and stop reacting to clicks */
+.memory-card.is-matched {
+  cursor: default;
+  opacity: 0.55;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .start-countdown {
-    animation: none;
+  .memory-card-inner {
+    transition: none;
   }
 }
