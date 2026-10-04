@@ -103,7 +103,7 @@ function createCard(card, index, colorClass) {
 
   button.innerHTML =
     '<span class="memory-card-inner">' +
-      '<span class="memory-card-face memory-card-back ' + colorClass + '">?</span>' +
+      '<span class="memory-card-face memory-card-back ' + colorClass + '">+</span>' +
       '<span class="memory-card-face memory-card-front">' +
         '<img src="' + card.cover + '" alt="' + card.title + '" loading="lazy">' +
       "</span>" +
