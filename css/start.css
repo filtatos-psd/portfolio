@@ -6,20 +6,24 @@
 
 /* ----- START / BACK button in the footer: solid yellow ----- */
 .footer-start {
-  color: var(--color-text);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
   text-decoration: none;
   cursor: pointer;
-  transition: color 0.15s ease;
+  transition: background 0.15s ease;
 }
 
 .footer-start:hover,
 .footer-start:focus-visible,
 .footer-start.is-active {
-  color: var(--color-yellow);
+  background: var(--color-yellow);
+  color: var(--color-bg);
 }
 
 .footer-start:focus-visible {
-  outline: 2px solid var(--color-yellow);
+  outline: 2px solid var(--color-text);
   outline-offset: 2px;
 }
 
