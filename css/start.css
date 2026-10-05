@@ -118,7 +118,7 @@
 .memory-card-back.card-pink   { background: var(--color-pink); }
 .memory-card-back.card-yellow { background: var(--color-yellow); }
 .memory-card-back.card-blue   { background: var(--color-blue); color: var(--color-text); }
-.memory-card-back.card-white { background: var(--color-text); }
+.memory-card-back.card-white  { background: var(--color-white); color: var(--color-text); }
 
 /* Front face: the project image, center-cropped to a perfect square */
 .memory-card-front {
