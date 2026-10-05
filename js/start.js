@@ -14,7 +14,7 @@ const movesEl = document.getElementById("memory-moves");
 const statusEl = document.getElementById("memory-status");
 const footerButton = document.getElementById("footer-start");
 
-const CARD_COLORS = ["card-pink", "card-yellow", "card-blue"];
+const CARD_COLORS = ["card-pink", "card-yellow", "card-blue" , "card-white"];
 
 let lockBoard = false;
 let firstCard = null;
