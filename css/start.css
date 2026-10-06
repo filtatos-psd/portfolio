@@ -1,6 +1,6 @@
 /* ===== START PAGE: MEMORY GAME =====
    Styles for the START/BACK button in the footer and for the #start page:
-   a memory-matching game where every pair is one of your projects.
+   a memory-matching game where every card pair is one of your projects.
    Colors and fonts come from the variables already defined in style.css.
 */
 
@@ -144,4 +144,110 @@
   .memory-card-inner {
     transition: none;
   }
+}
+
+/* ===== OS WINDOW CONTROLS ===== */
+.window-controls {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.win-btn {
+  width: 20px;
+  height: 20px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.win-btn:hover {
+  background: var(--color-yellow);
+  color: var(--color-bg);
+  border-color: var(--color-yellow);
+}
+
+.win-btn:active {
+  background: var(--color-pink);
+  color: var(--color-bg);
+  border-color: var(--color-pink);
+}
+
+/* Minimized window: only the body collapses. Width and position never change,
+   so restore always returns the exact same window. */
+.os-window.is-minimized .os-window-body {
+  display: none;
+}
+
+/* Dragging state */
+.os-window.dragging {
+  transition: none !important;
+  opacity: 0.9;
+  user-select: none;
+}
+
+.os-window-header {
+  touch-action: none;
+}
+
+/* Floating (dragged) windows: cap height, scroll the body so long
+   content (e.g. the memory game) stays playable */
+.os-window.is-floating {
+  max-height: calc(100vh - var(--header-height) - var(--footer-height) - 24px);
+  max-height: calc(100dvh - var(--header-height) - var(--footer-height) - 24px);
+  display: flex;
+  flex-direction: column;
+}
+
+.os-window.is-floating .os-window-body {
+  overflow-y: auto;
+  min-height: 0;
+  overscroll-behavior: contain;
+}
+
+/* Secret section: exactly one viewport tall, never scrolls the site.
+   Only the window body scrolls. */
+#page-recall {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  max-height: calc(100vh - var(--header-height) - var(--footer-height));
+  min-height: calc(100dvh - var(--header-height) - var(--footer-height));
+  max-height: calc(100dvh - var(--header-height) - var(--footer-height));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#page-recall .page-header {
+  flex: 0 0 auto;
+}
+
+#page-recall .os-window {
+  flex: 0 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#page-recall .os-window-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  min-height: 0;
+  overscroll-behavior: contain;
+}
+
+/* Invisible stand-in that preserves the window's place in the page layout
+   (grid cell, section height, site scroll) while it floats */
+.os-window-placeholder {
+  visibility: hidden;
+  pointer-events: none;
 }
