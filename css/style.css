@@ -518,11 +518,17 @@ code {
 .os-window-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5rem 0.8rem;
   background: var(--color-text);
   color: var(--color-bg);
   font-family: var(--font-mono);
   font-size: 0.75rem;
+  cursor: grab;
+}
+
+.os-window-header:active {
+  cursor: grabbing;
 }
 
 .os-window-body {
