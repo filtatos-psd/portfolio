@@ -7,7 +7,7 @@
    this page is open, so the person can leave the same way they came in.
 */
 
-const START_HASH = "#start";
+const START_HASH = "#recall";
 
 const boardEl = document.getElementById("memory-board");
 const movesEl = document.getElementById("memory-moves");
@@ -190,10 +190,37 @@ function syncWithRoute() {
   const open = window.location.hash === START_HASH;
   footerButton.classList.toggle("is-active", open);
 
+  const recallWindow = document.getElementById("recall-window");
+
   if (open) {
     footerButton.textContent = "BACK";
     footerButton.setAttribute("href", lastOutsideHash);
     renderBoard();
+
+    // Opening look: big centered floating window with internal scroll,
+    // exactly like the maximized state. Same every time.
+    if (recallWindow) {
+      recallWindow.style.display = "";
+      recallWindow.classList.remove("is-minimized");
+      const minBtn = recallWindow.querySelector(".minimize-btn");
+      if (minBtn) {
+        minBtn.textContent = "_";
+        minBtn.setAttribute("aria-label", "Minimize");
+      }
+      const vw = document.documentElement.clientWidth;
+      const vh = document.documentElement.clientHeight;
+      const w = Math.min(960, vw - 32);
+      recallWindow.classList.add("is-floating");
+      recallWindow.style.position = "fixed";
+      recallWindow.style.margin = "0";
+      recallWindow.style.transform = "none";
+      recallWindow.style.width = w + "px";
+      const h = recallWindow.getBoundingClientRect().height;
+      const availH = vh - 72 - 40;
+      recallWindow.style.left = Math.max(8, (vw - w) / 2) + "px";
+      recallWindow.style.top = (72 + Math.max(8, (availH - Math.min(h, availH)) / 2)) + "px";
+      recallWindow.style.zIndex = "60";
+    }
   } else {
     footerButton.textContent = "START";
     footerButton.setAttribute("href", START_HASH);
