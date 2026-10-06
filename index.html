@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/start.css">
+  <link rel="stylesheet" href="css/work-bg.css">
+  <link rel="stylesheet" href="css/recall-contact-bg.css">
 </head>
 <body>
   <div class="grid-background" aria-hidden="true"></div>
@@ -107,7 +109,7 @@
       <header class="page-header">
         <p class="section-kicker">Archive</p>
         <h1 class="page-title">Work</h1>
-        <p class="page-intro">Selected posters, covers, and digital pieces. Click a work to open it.</p>
+        <p class="page-intro">Selected posters, covers, and digital pieces. Hover a column to expand.</p>
       </header>
       <div class="project-grid" id="work-grid"></div>
     </section>
@@ -124,10 +126,13 @@
           <h2>Designer<br>Artist</h2>
         </div>
 
-        <article class="os-window">
+        <article class="os-window" id="about-window">
           <div class="os-window-header">
             <span>ABOUT_ME.TXT</span>
-            <span>[_] [X]</span>
+            <div class="window-controls">
+              <button class="win-btn minimize-btn" type="button" aria-label="Minimize">_</button>
+              <button class="win-btn close-btn" type="button" aria-label="Close">×</button>
+            </div>
           </div>
           <div class="os-window-body">
             <p id="about-text"></p>
@@ -145,7 +150,7 @@
     <section class="page" id="page-contact" hidden>
       <header class="page-header">
         <p class="section-kicker">Signal</p>
-        <h1 class="page-title">Let’s build.</h1>
+        <h1 class="page-title">Let's build.</h1>
       </header>
 
       <div class="contact-layout">
@@ -185,30 +190,33 @@
   </main>
 
         <!-- ===== START (hidden page, opened from the START button in the footer) ===== -->
-    <section class="page" id="page-start" hidden>
-      <header class="page-header">
-        <p class="section-kicker">Unknown_File</p>
-        <h1 class="page-title">Re:Call.</h1>
-      </header>
+  <section class="page" id="page-recall" hidden>
+    <header class="page-header">
+      <p class="section-kicker">Unknown_File</p>
+      <h1 class="page-title">Re:Call.</h1>
+    </header>
 
-      <article class="os-window start-window">
-        <div class="os-window-header">
-          <span>RE:CALL.EXE</span>
-          <span>[_] [X]</span>
+    <article class="os-window start-window" id="recall-window">
+      <div class="os-window-header">
+        <span>RE:CALL.EXE</span>
+        <div class="window-controls">
+          <button class="win-btn minimize-btn" type="button" aria-label="Minimize">_</button>
+          <button class="win-btn close-btn" type="button" aria-label="Close">×</button>
         </div>
-        <div class="os-window-body start-body">
-          <div class="memory-status-row">
-            <span class="memory-moves" id="memory-moves">MOVES: 0</span>
-            <span class="memory-win-status" id="memory-status" hidden></span>
-          </div>
-          <div class="memory-board" id="memory-board"></div>
+      </div>
+      <div class="os-window-body start-body">
+        <div class="memory-status-row">
+          <span class="memory-moves" id="memory-moves">MOVES: 0</span>
+          <span class="memory-win-status" id="memory-status" hidden></span>
         </div>
-      </article>
-    </section>
+        <div class="memory-board" id="memory-board"></div>
+      </div>
+    </article>
+  </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <a class="footer-start" id="footer-start" href="#start">START</a>
+    <a class="footer-start" id="footer-start" href="#recall">START</a>
     <span class="footer-path">C:\PORTFOLIO\<span id="footer-page">HOME</span></span>
     <span class="footer-handle" id="footer-handle"></span>
     <span class="footer-clock" id="clock">00:00:00</span>
@@ -231,5 +239,6 @@
   <script src="js/data.js"></script>
   <script src="js/script.js"></script>
   <script src="js/start.js"></script>
+  <script src="js/bg-animation.js"></script>
 </body>
 </html>
