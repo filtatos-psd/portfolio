@@ -1,0 +1,40 @@
+/* ===== RECALL + CONTACT BACKGROUND =====
+   Like main_inspo_for_background.html + inspo_for_background_3.html:
+   pixel soil with a moving wave, density characters drifting,
+   pixel sprout growing from the soil.
+   Only site colors + site mono font, behind content,
+   section-only, prefers-reduced-motion respected, no heavy loops.
+*/
+
+#page-recall,
+#page-contact {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.matrix-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  opacity: 0.6;
+  image-rendering: pixelated;
+}
+
+#page-recall .page-header,
+#page-recall .os-window,
+#page-contact .page-header,
+#page-contact .contact-layout {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .matrix-canvas {
+    display: none;
+  }
+}
