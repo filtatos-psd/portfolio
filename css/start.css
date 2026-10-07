@@ -199,6 +199,12 @@
   touch-action: none;
 }
 
+/* Mobile menu must always stay above floating windows so navigation
+   is never blocked (windows get high inline z-index when dragged) */
+body.menu-open .os-window {
+  z-index: 40 !important;
+}
+
 /* Floating (dragged) windows: cap height, scroll the body so long
    content (e.g. the memory game) stays playable */
 .os-window.is-floating {
