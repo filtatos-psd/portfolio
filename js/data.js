@@ -85,26 +85,14 @@ const PROJECTS = [
     images: ["assets/stale_rage.png"]
   },
   {
-    id: "scrim",
-    title: "scrim",
-    year: "2025",
-    tags: ["profile", "photoshop"],
-    cover: "assets/scrim.png",
-    images: ["assets/scrim.png"]
-  },
-  {
-    id: "detailed_effect",
-    title: "detailed_effect",
+    id: "detailed_effects",
+    title: "detailed_effects",
     year: "2024",
     tags: ["effect", "profile", "photoshop"],
-    cover: "assets/detailed_effect.jpg",
+    cover: "assets/scrim.png",
     images: [
-      "assets/detailed_effect.jpg",
-      "assets/detailed_effect2.jpg",
-      "assets/detailed_effect3.jpg",
-      "assets/detailed_effect4.jpg",
-      "assets/detailed_effect5.jpg",
-      "assets/detailed_effect6.jpg"
+      "assets/scrim.png",
+      "assets/detailed_effect.jpg"
     ]
   }
 ];
