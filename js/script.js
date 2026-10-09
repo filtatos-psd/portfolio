@@ -159,6 +159,13 @@ function setupOSWindows() {
         ph.style.margin = getComputedStyle(winEl).margin;
         winEl.parentNode.insertBefore(ph, winEl);
         winEl._ph = ph;
+        // Double guarantee for the yellow DESIGNER ARTIST banner:
+        // freeze its height so it can never shrink while the window floats
+        const layout = winEl.closest(".about-layout");
+        const banner = layout ? layout.querySelector(".about-banner") : null;
+        if (banner) {
+          banner.style.minHeight = banner.getBoundingClientRect().height + "px";
+        }
       }
       winEl.style.position = "fixed";
       winEl.style.margin = "0";
@@ -243,9 +250,20 @@ function setupOSWindows() {
     if (minimizeBtn) {
       minimizeBtn.addEventListener("click", function (e) {
         e.stopPropagation();
+        const isRecall = !!winEl.closest("#page-recall");
+        const layout = winEl.closest(".about-layout");
         // Fix position first so the collapsed bar stays where the window was
-        if (winEl.style.position !== "fixed") {
+        if (!isRecall && winEl.style.position !== "fixed") {
           placeFixed();
+        }
+        // Freeze the whole about grid height while collapsed so the yellow
+        // banner can never shrink; release on restore (placeholder still holds it)
+        if (layout && !isRecall) {
+          if (!winEl.classList.contains("is-minimized")) {
+            layout.style.minHeight = layout.getBoundingClientRect().height + "px";
+          } else {
+            layout.style.minHeight = "";
+          }
         }
         const minimized = winEl.classList.toggle("is-minimized");
         minimizeBtn.textContent = minimized ? "□" : "_";
@@ -263,6 +281,23 @@ function setupOSWindows() {
         window.location.hash = "#home";
       });
     }
+  });
+
+  // On browser resize/rotation, release the frozen banner height while the
+  // about window is back in its natural (static) state, so nothing goes stale
+  window.addEventListener("resize", function () {
+    document.querySelectorAll(".about-layout").forEach(function (layout) {
+      const win = layout.querySelector(".os-window");
+      const banner = layout.querySelector(".about-banner");
+      if (!banner) {
+        return;
+      }
+      if (win && (win.style.position === "fixed" || win.classList.contains("is-minimized"))) {
+        return;
+      }
+      layout.style.minHeight = "";
+      banner.style.minHeight = "";
+    });
   });
 }
 
