@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/33249815/README.md)
 # Portfolio — Thanashs Papakwstas (filtatos)
 
 Personal portfolio website showcasing digital art, poster design, and visual effects work.
@@ -84,7 +85,7 @@ Example:
 
 ```
 index.html
-favicon.svg
+filtatos.svg
 css/style.css
 js/data.js
 js/script.js
