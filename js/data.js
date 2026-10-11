@@ -48,7 +48,7 @@ const PROJECTS = [
     id: "paper_traces",
     title: "paper_traces",
     year: "2026",
-    tags: ["design", "photoshop", "poster"],
+    tags: ["design", "poster", "photoshop"],
     cover: "assets/pool.png",
     images: [
       "assets/pool.png",
