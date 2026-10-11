@@ -44,6 +44,17 @@ const SITE = {
    the full gallery.
 */
 const PROJECTS = [
+     {
+    id: "paper_traces",
+    title: "paper_traces",
+    year: "2026",
+    tags: ["design", "photoshop", "poster"],
+    cover: "assets/pool.png",
+    images: [
+      "assets/pool.png",
+      "assets/mountain.png"
+    ]
+  },
   {
     id: "blasphemy",
     title: "blasphemy",
@@ -93,17 +104,6 @@ const PROJECTS = [
     images: [
       "assets/scrim.png",
       "assets/detailed_effect.jpg"
-    ]
-  },
-  {
-    id: "paper_traces",
-    title: "paper_traces",
-    year: "2026",
-    tags: ["design", "photoshop", "poster"],
-    cover: "assets/pool.png",
-    images: [
-      "assets/pool.png",
-      "assets/mountain.png"
     ]
   }
 ];
