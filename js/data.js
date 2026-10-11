@@ -94,5 +94,16 @@ const PROJECTS = [
       "assets/scrim.png",
       "assets/detailed_effect.jpg"
     ]
+  },
+  {
+    id: "paper_traces",
+    title: "paper_traces",
+    year: "2026",
+    tags: ["design", "photoshop", "poster"],
+    cover: "assets/pool.png",
+    images: [
+      "assets/pool.png",
+      "assets/mountain.png"
+    ]
   }
 ];
