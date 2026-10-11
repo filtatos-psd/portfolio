@@ -1,3 +1,4 @@
+
 /* ===== WORK SECTION: EXPANDING COLUMNS =====
    Same hover animation as inspo_for_work_section.html:
    flex columns that expand on hover, image reveals, big titles,
@@ -73,8 +74,17 @@
 #page-work .project-id {
   font-family: var(--font-mono);
   font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   color: var(--color-muted);
+}
+
+#page-work .project-files {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-yellow);
+  margin-bottom: 10px;
 }
 
 #page-work .project-column:hover .project-id {
