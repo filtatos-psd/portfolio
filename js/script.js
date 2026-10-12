@@ -368,8 +368,11 @@ function createProjectColumn(project, index) {
       '<img src="' + project.cover + '" alt="' + project.title + '" loading="lazy">' +
     '</div>' +
     '<div class="project-title-container">' +
-      '<div class="project-id">' + (project.year || "—") + " / " + displayOrDash(project.tags) + "</div>" +
-      '<div class="project-files">FILES: ' + project.images.length + "</div>" +
+      '<div class="project-details">' +
+        "<div>&gt; YEAR: " + displayOrDash(project.year) + "</div>" +
+        "<div>&gt; TAGS: " + displayOrDash(project.tags) + "</div>" +
+        '<div class="project-files-line">&gt; FILES: ' + project.images.length + "</div>" +
+      "</div>" +
       '<h2 class="project-title">' + project.title + '</h2>' +
     '</div>';
 
