@@ -51,8 +51,8 @@ const PROJECTS = [
     tags: ["design", "poster", "photoshop"],
     cover: "assets/mountain.png",
     images: [
-      "assets/pool.png",
-      "assets/mountain.png"
+      "assets/mountain.png",
+      "assets/pool.png"
     ]
   },
   {
