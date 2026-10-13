@@ -45,6 +45,14 @@ const SITE = {
 */
 const PROJECTS = [
      {
+    id: "ghoul",
+    title: "ghoul",
+    year: "2026",
+    tags: ["poster", "photoshop", "illustrator"],
+    cover: "assets/ghoul.png",
+    images: ["assets/ghoul.png"]
+  },
+     {
     id: "paper_traces",
     title: "paper_traces",
     year: "2026",
