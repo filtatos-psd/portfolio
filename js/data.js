@@ -12,7 +12,7 @@ const SITE = {
   instagramHandle: "@filtatos",
   tagline: "Visual systems for posters, covers, and digital art.",
   status: "Open for commissions",
-  about: "I'm Thanashs Papakwstas, a 21-year-old digital artist and graphic designer based in Greece. I'm currently studying Informatics & Telecommunications at the University of Ioannina, specializing in Intelligent Systems & Applications and Computer Systems. Alongside my studies, I've built hands-on experience in Adobe Photoshop and Illustrator, with working knowledge of Corel Draw and DaVinci Resolve — focusing on color correction, poster and cover art, digital art, photo retouching, and video editing with special effects. I enjoy combining technical thinking with creative execution, and I'm always open to new commissions and collaborations.",
+  about: "I'm Thanashs Papakwstas, a 21-year-old digital artist and graphic designer based in Greece. I’m a graduate of the Informatics & Telecommunications department at the University of Ioannina, where I focused on Intelligent Systems & Applications and Computer Systems. Alongside my studies, I've built hands-on experience in Adobe Photoshop and Illustrator, with working knowledge of Corel Draw and DaVinci Resolve — focusing on color correction, poster and cover art, digital art, photo retouching, and video editing with special effects. I enjoy combining technical thinking with creative execution, and I'm always open to new commissions and collaborations.",
   skills: [
     "Photoshop",
     "Illustrator",
