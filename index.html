@@ -14,6 +14,8 @@
   <link rel="stylesheet" href="css/start.css?v=2">
   <link rel="stylesheet" href="css/work-bg.css?v=2">
   <link rel="stylesheet" href="css/recall-contact-bg.css?v=2">
+  <link rel="stylesheet" href="css/copyright.css?v=1">
+  <link rel="stylesheet" href="css/oasis-grid.css?v=1">
 </head>
 <body>
   <div class="grid-background" aria-hidden="true"></div>
@@ -44,6 +46,7 @@
     <section class="page" id="page-home" hidden>
       <div class="hero">
         <div class="hero-graphic">
+          <canvas class="oasis-canvas" id="hero-oasis" aria-hidden="true"></canvas>
           <p class="hero-kicker" id="home-kicker"></p>
           <h1 class="hero-title">
             <span>Thanashs</span>
@@ -122,6 +125,7 @@
       </header>
 
       <div class="about-layout">
+        <canvas class="oasis-canvas" id="about-oasis" aria-hidden="true"></canvas>
         <div class="about-banner">
           <h2>Designer<br>Artist</h2>
         </div>
@@ -164,9 +168,14 @@
             </svg>
           </div>
 
-          <p class="contact-note">For commissions and collaborations, write directly or use the form.</p>
-          <a class="contact-link" id="contact-email" href="mailto:thanashspapakwstas@gmail.com"></a>
-          <a class="contact-link" id="contact-instagram" href="https://www.instagram.com/filtatos/" target="_blank" rel="noopener noreferrer"></a>
+          <div class="contact-copyright">
+            <p class="copyright-line">&copy; <span class="copyright-year"></span> filtatos. All rights reserved.</p>
+            <p class="copyright-line">Want to use or license a piece? Get in touch:</p>
+            <div class="copyright-links">
+              <a id="contact-instagram" href="https://www.instagram.com/filtatos/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a id="contact-email" href="mailto:thanashspapakwstas@gmail.com">Email</a>
+            </div>
+          </div>
         </div>
 
         <form class="contact-form" id="contact-form">
@@ -237,8 +246,17 @@
   </div>
 
   <script src="js/data.js?v=2"></script>
-  <script src="js/script.js?v=3"></script>
+  <script src="js/script.js?v=4"></script>
   <script src="js/start.js?v=2"></script>
   <script src="js/bg-animation.js?v=2"></script>
+  <script src="js/oasis-grid.js?v=1"></script>
+  <script>
+    (function () {
+      var yearSpan = document.querySelector(".copyright-year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    })();
+  </script>
 </body>
 </html>
