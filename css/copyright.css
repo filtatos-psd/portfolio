@@ -1,0 +1,36 @@
+.contact-copyright {
+  max-width: 22rem;
+  color: var(--color-muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.copyright-line {
+  margin: 0;
+}
+
+.copyright-year {
+  color: var(--color-yellow);
+}
+
+.copyright-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-top: 1.1rem;
+}
+
+.copyright-links a {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+.copyright-links a:hover,
+.copyright-links a:focus-visible {
+  color: var(--color-pink);
+}
