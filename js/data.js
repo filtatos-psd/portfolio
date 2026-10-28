@@ -57,10 +57,10 @@ const PROJECTS = [
     title: "paper_traces",
     year: "2026",
     tags: ["design", "poster", "photoshop"],
-    cover: "assets/mountain.png",
+    cover: "assets/pool.png",
     images: [
-      "assets/mountain.png",
-      "assets/pool.png"
+      "assets/pool.png",
+      "assets/mountain.png"
     ]
   },
   {
