@@ -414,12 +414,14 @@ function fillAbout() {
 
 function fillContact() {
   const emailLink = document.getElementById("contact-email");
-  emailLink.href = "mailto:" + SITE.email;
-  emailLink.textContent = SITE.email;
+  if (emailLink) {
+    emailLink.href = "mailto:" + SITE.email;
+  }
 
   const instagramLink = document.getElementById("contact-instagram");
-  instagramLink.href = SITE.instagramUrl;
-  instagramLink.textContent = SITE.instagramHandle;
+  if (instagramLink) {
+    instagramLink.href = SITE.instagramUrl;
+  }
 }
 
 function setupContactForm() {
