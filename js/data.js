@@ -44,14 +44,6 @@ const SITE = {
    the full gallery.
 */
 const PROJECTS = [
-        {
-    id: "apostate_of_hate",
-    title: "apostate_of_hate",
-    year: "2026",
-    tags: ["poster", "photoshop", "illustrator"],
-    cover: "assets/apostate_of_hate.png",
-    images: ["assets/apostate_of_hate.png"]
-  },
      {
     id: "ghoul",
     title: "ghoul",
